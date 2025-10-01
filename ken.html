@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>K & Elaiza Journey 💕</title>
+  <link rel="stylesheet" href="ken.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash">
+    <div class="splash-content">
+      <img src="img/couple.png" alt="Couple Sticker" class="splash-sticker">
+      <h1>💖 Welcome to Ken & Elaiza’s Love Story 💖</h1>
+      <p>Our sweetest journey together ✨</p>
+      <button id="startBtn">Start 💕</button>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="img/love.mp3" type="audio/mpeg">
+  </audio>
+  <button id="musicBtn">🎶 Play Music</button>
+
+  <!-- Main Content -->
+  <div id="mainContent" style="display:none;">
+    <header>
+      <h1>💖 Our Love Journey 💖</h1>
+      <nav>
+        <a href="#" class="nav-link" data-page="home">🏠 Home</a>
+        <a href="#" class="nav-link" data-page="timeline">📍 Timeline</a>
+        <a href="#" class="nav-link" data-page="letters">💌 Letters</a>
+        <a href="#" class="nav-link" data-page="songs">🎶 Songs</a>
+        <a href="#" class="nav-link" data-page="gallery">📸 Gallery</a>
+      </nav>
+    </header>
+
+    <main>
+        <!-- Home -->
+
+    <section id="home" class="page active">
+  <div class="home-hero">
+     <div class="slideshow">
+    <img src="img/lai.jpeg"class="slide" alt="Ken">
+     <img src="img/ken.jpg" class="slide" alt="Ken">
+      <img src="img/u.jpg" class="slide" alt="Us">
+      </div>
+    <h2 class="romantic-title">💖 Ken & Lai💖</h2>
+    <p class="romantic-quote">
+      From Roblox nights 🎮 to photobooths 📸,  
+      from holding hands 🤝 to kisses 💋,  
+      every step with you has been magical ✨
+    </p>
+  </div>
+</section>
+      <!-- Timeline -->
+      <section id="timeline" class="page">
+        <h2>📍 Roadmap of Us</h2>
+        <div class="timeline"></div>
+      </section>
+<section id="letters" class="page">
+  <h2>💌 My Letter for You</h2>
+  
+  <div class="letter-container">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="letter-paper">
+        <p>
+         It’s been a year since we started playing Roblox. I still remember vividly how heartless you were when you told me in our group chat that you’d be charging your phone with just a simple “charging.” Huhuhu, I was heartbroken. But my delulu side kept me excited because at least you made the effort to tell me, instead of leaving me hanging.
+
+On the second day, you directly told me in Roblox that you’d charge your phone and said “babye.” I was so happy, who wouldn’t be? It’s Ken Jorique, the Ken Jorique! Huhuhu, I was over the moon.
+
+On the third day, you told me you had a good time and even said goodnight. That felt like progress, and it continued every day, starting from October 5 in the group chat, October 6 when you directly messaged me, October 7 when you said you had a good time and goodnight. On October 8, we didn’t play because I was too scared to invite you. On October 9, I finally gathered the courage to tell you that my character was reset, and that I didn’t play ML because you weren’t there. But you ignored my message ha! You were in full denial about my feelings for you, huhuhu. After that, we kept playing every day, and little by little, we became close. Ackkkjjkkkk.
+
+Every game we played felt like more than just a game. it was like a secret little world where it was just the two of us. I kept every small moment in my heart: the way you’d tease me, the way you’d stay even when I thought you’d leave, the way you’d sometimes pretend not to care but I knew deep down you did. Even the silence felt comforting when it was with you.
+
+Then came the days when I realized I wasn’t just happy because of Roblox, I was happy because of you. Your presence became the highlight of my day. From a simple “charging” to “goodnight,” from short replies to real conversations, I witnessed how our bond grew.
+
+I’ll never forget the laughter we shared, the silly fights, the moments when you made me cry (yes, huuhuuu), but also the way you unknowingly healed me after. You were my comfort, my excitement, and my safe place all at once.
+
+Now, looking back after a whole year, I can’t help but feel grateful. Who would have thought that a simple game could lead me to someone like you? I know we’re still young, still learning, still sometimes stubborn with each other, but my heart keeps choosing you. Always you.
+
+Thank you for being my teammate, my partner, my baby. Thank you for making ordinary days feel special. I pray that this is only the beginning of our story, and that we’ll continue to create more memories—both in games and in real life.
+
+I love you endlessly. Always and forever, through every respawn, every reset, and every “charging.” 💕
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+      <!-- Songs -->
+      <section id="songs" class="page">
+        <h2>💖 Songs for You 💖</h2>
+        <div id="music-player">
+          <div class="player-info">
+            <span id="current-song">Select a song</span>
+          </div>
+          <audio id="audio-player"></audio>
+          <div class="controls">
+            <button id="play-btn">▶</button>
+            <button id="pause-btn">⏸</button>
+          </div>
+          <input type="range" id="progress-bar" value="0" min="0" step="1">
+          <div class="song-list">
+            <button class="song" data-src="img/love.mp3">💌 Love</button>
+            <button class="song" data-src="img/saving.mp3">🎶 Saving All My Love for You</button>
+            <button class="song" data-src="img/every.mp3">☀️ Every Summertime</button>
+            <button class="song" data-src="img/daydream.mp3">🌙 Daydream</button>
+            <button class="song" data-src="img/melting.mp3">🍯 Melting</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section id="gallery" class="page">
+        <h2>📸 Our Photobooths</h2>
+        <div id="photoGallery"></div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with 💕 by Lailai for Ken</p>
+    </footer>
+  </div><!-- Lightbox for Gallery -->
+<div id="lightbox">
+  <img src="" alt="Enlarged Photo">
+</div>
+
+  <script src="ken.js"></script>
+</body>
+</html>

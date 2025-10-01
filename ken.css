@@ -1,0 +1,446 @@
+body {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+  margin: 0;
+  padding: 0;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* Splash */
+#splash {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+  flex-direction: column;
+  text-align: center;
+}
+
+.splash-content {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+.splash-sticker { width: 100px; margin-bottom: 15px; }
+
+#startBtn, #musicBtn {
+  background: #ff69b4; color: white;
+  border: none; cursor: pointer;
+  border-radius: 15px; font-size: 18px;
+  padding: 12px 20px;
+}
+#musicBtn {
+  position: fixed; top: 20px; right: 20px;
+  border-radius: 50%; padding: 10px 15px;
+  z-index: 2000; display: none;
+}
+#startBtn:hover, #musicBtn:hover { background: #ff1493; }
+
+/* Header */
+header {
+  background: #ff69b4;
+  padding: 15px; text-align: center;
+  color: white;
+}
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+nav a:hover { text-decoration: underline; }
+
+/* Sections */
+.page { display: none; }
+.page.active { display: block; }
+
+section {
+  margin: 30px;
+  padding: 20px;
+  background: white url("img/heart-sticker.png") no-repeat top right / 60px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#timeline-list li {
+  list-style: none;
+  margin: 10px 0; padding: 10px;
+  background: #fff0f5;
+  border-left: 5px solid #ff69b4;
+  border-radius: 10px;
+}
+
+/* Gallery */
+#photoGallery {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  justify-content: center;
+}
+#photoGallery img {
+  width: 150px;
+  border-radius: 12px;
+  border: 3px solid #ff69b4;
+  transition: transform 0.3s, filter 0.3s;
+}
+#photoGallery img:hover {
+  transform: scale(1.1) rotate(-2deg);
+  filter: brightness(1.2);
+}
+
+/* Floating hearts */
+.heart {
+  position: fixed;
+  bottom: -20px;
+  font-size: 20px;
+  color: #ff69b4;
+  animation: floatUp 6s linear infinite;
+  pointer-events: none;
+  opacity: 0.8;
+}
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
+}
+/* --- TIMELINE --- */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #ff69b4;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+}
+
+.timeline-item .content {
+  background: #fff0f5;
+  padding: 15px 20px;
+  border-radius: 15px;
+  border: 2px solid #ff69b4;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: inline-block;
+  max-width: 90%;
+}
+
+.timeline-item::before {
+  content: '💖';
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-size: 18px;
+  background: #ff69b4;
+  color: white;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Left side */
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+.timeline-item.left::before {
+  right: -15px;
+}
+
+/* Right side */
+.timeline-item.right {
+  left: 50%;
+  text-align: left;
+}
+.timeline-item.right::before {
+  left: -15px;
+}
+
+/* Headings and text */
+.timeline-item h3 {
+  margin: 0 0 5px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ff1493;
+}
+.timeline-item p {
+  margin: 0;
+  font-size: 16px;
+}
+#music-player {
+  background: #fff0f6;
+  border: 2px solid #ff99cc;
+  border-radius: 20px;
+  padding: 20px;
+  width: 90%;
+  max-width: 500px;
+  margin: 20px auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(255, 150, 200, 0.3);
+}
+
+#music-player .player-info {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #d63384;
+}
+
+#music-player .controls button {
+  background: #ff99cc;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px 15px;
+  margin: 0 10px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+#music-player .controls button:hover {
+  background: #ff66a3;
+}
+
+#progress-bar {
+  width: 80%;
+  margin: 10px auto;
+  display: block;
+}
+
+.song-list {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.song-list button {
+  background: #ffe6f0;
+  border: 1px solid #ff99cc;
+  padding: 8px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.song-list button:hover {
+  background: #ffccdd;
+}
+/* Gallery Grid */
+#photoGallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+#photoGallery img {
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #ff69b4;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
+}
+
+#photoGallery img:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+/* Lightbox Popup */
+#lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+#lightbox:active {
+  display: none;
+}
+/* --- HOME PAGE --- */
+.home-hero {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(180deg, #fff0f6, #ffe6f0);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(255, 100, 150, 0.2);
+  animation: fadeIn 2s ease-in-out;
+}
+
+.home-hero h2 {
+  font-size: 28px;
+  color: #d63384;
+  animation: bounceIn 1.5s;
+}
+
+.home-hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #444;
+}
+
+.romantic-quote {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 20px;
+  color: #ff1493;
+  animation: fadeInUp 3s ease;
+}
+
+.slideshow {
+  margin: 20px auto;          /* centers horizontally */
+  position: relative;
+  width: 250px;
+  height: 250px;
+  display: flex;              /* flexbox for centering */
+  justify-content: center;    /* center horizontally inside */
+  align-items: center;        /* center vertically inside */
+  overflow: hidden;
+  border-radius: 20px;
+  border: 5px solid #ff99cc;
+  box-shadow: 0 6px 15px rgba(255, 100, 150, 0.4);
+}
+
+
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+.slideshow img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  left: 0;
+  top: 0;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  60% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+/* --- LETTER PAGE --- */
+.letter-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px auto;
+}
+
+.envelope {
+  position: relative;
+  width: 320px;
+  height: 220px;
+  background: #ffb6c1;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.4s;
+}
+
+.envelope:hover {
+  transform: scale(1.05);
+}
+.envelope .flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-bottom: 110px solid #ff99cc;
+  z-index: 0; /* 👈 puts flap behind the letter */
+}
+
+.letter-paper {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background: #fff0f6;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #444;
+  animation: slideUp 1.5s ease;
+  z-index: 1; /* 👈 makes sure paper is above flap */
+}
+
+.lett
+
+.letter-paper p {
+  margin: 0;
+  white-space: pre-line;
+  font-style: italic;
+  color: #d63384;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
