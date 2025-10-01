@@ -65,8 +65,8 @@ document.querySelectorAll(".nav-link").forEach(link => {
 // Gallery
 const gallery = document.getElementById("photoGallery");
 const photos = [
-  "dec.jpeg","jan.jpg","feb.png","mar.jpg",
-  "apr.jpg","may.jpg","jun.jpg","jul.jpg","aug.png"
+  "dec.jpeg","jan.JPG","feb.PNG","mar.jpg",
+  "apr.jpg","may.JPG","jun.jpg","jul.jpg","aug.PNG"
 ]; 
 
 photos.forEach(pic => {
